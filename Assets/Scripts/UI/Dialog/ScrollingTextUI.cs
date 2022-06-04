@@ -15,28 +15,10 @@ public class ScrollingTextUI : MonoBehaviour
 
     private float _startScrollingTime;
     private int _previousTextLength;
+    private System.Action _onTextFullyDisplayed;
 
-    public string Text
-    {
-        get => _text;
-        set
-        {
-            _text = value; ;
-            _startScrollingTime = Time.time;
-            
-            if (_activated)
-            {
-                _tmpText.text = value;
-                _previousTextLength = 0;
-            }
-            else
-            {
-                _tmpText.text = value;
-                _previousTextLength = value.Length;
-            }
-
-        }
-    }
+    public TextMeshProUGUI TextMeshProUGUI => _tmpText;
+    public string Text => _text;
 
     private void Start()
     {
@@ -54,10 +36,33 @@ public class ScrollingTextUI : MonoBehaviour
         _tmpText = GetComponent<TextMeshProUGUI>();
     }
 
+    public void SetText(string text, System.Action onTextFullyDisplayed = null)
+    {
+        _text = text;
+        _startScrollingTime = Time.time;
+        _onTextFullyDisplayed = onTextFullyDisplayed;
+
+        if (_activated)
+        {
+            _tmpText.text = string.Empty;
+            _previousTextLength = 0;
+        }
+        else
+        {
+            _tmpText.text = text;
+            _previousTextLength = text.Length;
+            _onTextFullyDisplayed?.Invoke();
+        }
+    }
+
     public void ShowAllText()
     {
-        _tmpText.text = _text;
-        _previousTextLength = _text.Length;
+        if (_previousTextLength != _text.Length)
+        {
+            _tmpText.text = _text;
+            _previousTextLength = _text.Length;
+            _onTextFullyDisplayed?.Invoke();
+        }
     }
 
     private void UpdateScrollingText()
@@ -66,6 +71,7 @@ public class ScrollingTextUI : MonoBehaviour
         {
             int charactersToShowCount = Mathf.RoundToInt((Time.time - _startScrollingTime) * _charsPerSecond);
             charactersToShowCount = Mathf.Min(charactersToShowCount, _text.Length);
+            charactersToShowCount = Mathf.Max(charactersToShowCount, _previousTextLength);
             if (charactersToShowCount != _previousTextLength)
             {
                 if (_fixWordJumping && _tmpText.richText)
@@ -77,9 +83,13 @@ public class ScrollingTextUI : MonoBehaviour
                     _tmpText.text = _text.Substring(0, charactersToShowCount);
                 }
                 _previousTextLength = charactersToShowCount;
+                if (charactersToShowCount == _text.Length)
+                {
+                    _onTextFullyDisplayed?.Invoke();
+                }
             }
         }
-        else if (_previousTextLength != _text.Length)
+        else
         {
             ShowAllText();
         }

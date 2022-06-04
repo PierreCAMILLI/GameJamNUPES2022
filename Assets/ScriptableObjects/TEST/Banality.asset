@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c799ca47c0fb63c4badbc1b4924573a5, type: 3}
+  m_Name: Banality
+  m_EditorClassIdentifier: 
+  _text: "Voici une banalit\xE9 ! C'est fort fort fort banal, n'est-ce pas ?"
+  _waitingTimeBeforeNext: 3
+  _nextSequence: {fileID: 11400000, guid: b48a44afb7a72f34bac7cac73f5e4b85, type: 2}
