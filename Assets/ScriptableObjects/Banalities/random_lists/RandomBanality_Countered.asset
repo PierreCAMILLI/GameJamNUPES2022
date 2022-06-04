@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bfd8bffd95f8c46a6c28bbc91eba03, type: 3}
+  m_Name: RandomBanality_Countered
+  m_EditorClassIdentifier: 
+  _nextSequences:
+  - {fileID: 11400000, guid: da1ab0fcc51eafd4fa718c659f6c9adb, type: 2}
+  - {fileID: 11400000, guid: 609aa6569a25e35429f2515ea17b1e6f, type: 2}
+  - {fileID: 11400000, guid: 40def08ef3ec9bb4aa96d80994c5dd6e, type: 2}
+  - {fileID: 11400000, guid: ac1f909e37bf88b4c8cc4116c241e616, type: 2}
