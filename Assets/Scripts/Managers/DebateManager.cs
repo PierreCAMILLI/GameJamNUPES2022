@@ -10,16 +10,22 @@ public class DebateManager : Toolset.SingletonBehaviour<DebateManager>
     [SerializeField] private ScrollingTextUI _debateTextUI;
     [SerializeField] private ChoicesGeneratorUI _choicesGeneratorUI;
     [SerializeField] private PublicOpinionUI _publicOpinionUI;
+    [SerializeField] private TimespanUI _timespanUI;
 
     [Space]
     [SerializeField] private int _publicOpinionInitialValue = 0;
+    [SerializeField, Range(0f, 1f)] private float _frenesyPublicOpinionBonus = 0.25f;
+    [SerializeField, Range(0f, 1f)] private float _frenesyTimeDowngradePercent = 0.25f;
 
-    [SerializeField, ReadOnly] private int _publicOpinion;
+    private int _publicOpinion;
 
     public ScrollingTextUI DebateTextUI => _debateTextUI;
     public ChoicesGeneratorUI ChoicesGeneratorUI => _choicesGeneratorUI;
+    public PublicOpinionUI PublicOpinionUI => _publicOpinionUI;
+    public TimespanUI TimespanUI => _timespanUI;
 
     public DebatePlayer SequencePlayer => _sequencePlayer;
+
     public int PublicOpinion
     {
         get => _publicOpinion;
@@ -34,10 +40,15 @@ public class DebateManager : Toolset.SingletonBehaviour<DebateManager>
         }
     }
     public DebatorState DebatorState { get; set; }
+    public int Frenesy { get; set; }
+    public float FrenesyPublicOpinionBonus => _frenesyPublicOpinionBonus;
+    public float FrenesyTimeDowngradePercent => _frenesyTimeDowngradePercent;
 
     private void Start()
     {
         _publicOpinion = _publicOpinionInitialValue;
         _publicOpinionUI.SetValueWithoutTransition(_publicOpinionInitialValue);
+
+        Frenesy = 0;
     }
 }
