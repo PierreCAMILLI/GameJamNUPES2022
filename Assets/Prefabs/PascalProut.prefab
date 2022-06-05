@@ -214,3 +214,9 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: fec92b16c450c7148b3ddd7956bd4ef8, type: 3}
   - state: 5
     sound: {fileID: 8300000, guid: eb9763f70ee6d1148ae96b4155b44165, type: 3}
+  - state: 4
+    sound: {fileID: 8300000, guid: d5ba6bf2fa6d33744a3a6c8fc4f14bcc, type: 3}
+  - state: 2
+    sound: {fileID: 8300000, guid: d6101d0f2484f8d4e9a24a691c044c8f, type: 3}
+  - state: 3
+    sound: {fileID: 8300000, guid: 7e284bdaf20717a4c874c09d05e36e4c, type: 3}
