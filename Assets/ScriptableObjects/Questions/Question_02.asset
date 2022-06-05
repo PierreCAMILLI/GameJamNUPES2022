@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce85926ee84721a4088db5ae7d2d5b89, type: 3}
+  m_Name: Question_02
+  m_EditorClassIdentifier: 
+  _title: 
+  _text: Q2
+  _multiplier: 1
+  _victorySequence: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
+  _defeatSequence: {fileID: 11400000, guid: 34805efe56a8f554fa6508c0bdc33cb8, type: 2}
+  _defaultNextSequence: {fileID: 11400000, guid: d3b379991b343c04c8fd8e58a9a4fb5b, type: 2}
+  _answers:
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Text>k__BackingField: 100
+    <WinRate>k__BackingField: 5
+    <DebatorState>k__BackingField: 4
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Text>k__BackingField: 50
+    <WinRate>k__BackingField: 3
+    <DebatorState>k__BackingField: 3
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Text>k__BackingField: -50
+    <WinRate>k__BackingField: -3
+    <DebatorState>k__BackingField: 2
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: 34805efe56a8f554fa6508c0bdc33cb8, type: 2}
