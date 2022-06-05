@@ -6,8 +6,8 @@ public enum DebatorState
 {
     Neutral,
     Talking,
-    Satisfied,
-    OutOfSpeech,
+    Cornered,
+    GotYou,
     Angry,
     Vanquished
 }

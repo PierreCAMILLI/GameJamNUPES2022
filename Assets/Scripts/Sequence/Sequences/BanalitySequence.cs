@@ -7,6 +7,11 @@ public class BanalitySequence : DebateSequence
 {
     [SerializeField, TextArea(3, 6)] private string _text;
     [SerializeField] private float _waitingTimeBeforeNext;
+
+    [Space]
+    [SerializeField] private bool _changeDebatorState = false;
+    [SerializeField] private DebatorState _nextState;
+
     [SerializeField] private DebateSequence _nextSequence;
 
     private float _textFullyAppearedTime;

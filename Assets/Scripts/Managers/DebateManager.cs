@@ -44,11 +44,21 @@ public class DebateManager : Toolset.SingletonBehaviour<DebateManager>
     public float FrenesyPublicOpinionBonus => _frenesyPublicOpinionBonus;
     public float FrenesyTimeDowngradePercent => _frenesyTimeDowngradePercent;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     private void Start()
     {
         _publicOpinion = _publicOpinionInitialValue;
         _publicOpinionUI.SetValueWithoutTransition(_publicOpinionInitialValue);
 
         Frenesy = 0;
+    }
+
+    public bool IsSequenceAlreadyMet(DebateSequence sequence)
+    {
+        return _sequencePlayer.IsSequenceAlreadyMet(sequence);
     }
 }

@@ -6,11 +6,15 @@ public class DebatePlayer : MonoBehaviour
 {
     [SerializeField] private DebateSequence _startSequence;
 
+    private ISet<DebateSequence> _sequencesDone;
+
     public DebateSequence CurrentSequence { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
+        _sequencesDone = new HashSet<DebateSequence>();
+        _sequencesDone.Add(_startSequence);
         _startSequence?.OnStart();
         CurrentSequence = _startSequence;
     }
@@ -25,6 +29,12 @@ public class DebatePlayer : MonoBehaviour
     {
         CurrentSequence.OnEnd();
         CurrentSequence = nextSequence;
+        _sequencesDone.Add(nextSequence);
         nextSequence.OnStart();
+    }
+
+    public bool IsSequenceAlreadyMet(DebateSequence sequence)
+    {
+        return _sequencesDone.Contains(sequence);
     }
 }
