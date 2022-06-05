@@ -76,7 +76,7 @@ public class PublicOpinionUI : MonoBehaviour
     {
         if (_gaugeColors.Length == 0)
         {
-            return Color.black;
+            return Color.white;
         }
         if (_gaugeColors.Length == 1)
         {
