@@ -22,8 +22,14 @@ public class BanalitySequence : DebateSequence
     {
         _textFullyAppearedTime = float.MaxValue;
         ScrollingTextUI scrollingText = DebateManager.Instance.DebateTextUI;
+        if (_changeDebatorState)
+        {
+            DebateManager.Instance.DebatorUI.State = _nextState;
+        }
+        DebateManager.Instance.DebatorUI.IsTalking = true;
         scrollingText.SetText(_text, () =>
         {
+            DebateManager.Instance.DebatorUI.IsTalking = false;
             _textFullyAppearedTime = Time.time;
         });
     }

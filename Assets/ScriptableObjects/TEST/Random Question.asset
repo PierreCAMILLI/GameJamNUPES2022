@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSequences:
   - {fileID: 11400000, guid: 8aba3fdc00ac78042beddaa85e08867b, type: 2}
+  _activate: 1
+  _text: Revenons sur ce sujet un instant, voulez-vous ?
+  _waitingTimeBeforeNext: 3

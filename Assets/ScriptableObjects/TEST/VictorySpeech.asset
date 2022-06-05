@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: VictorySpeech
   m_EditorClassIdentifier: 
   _text: Vous... vous m'avez battu...
-  _debatorState: 0
+  _debatorState: 5
   _waitingTimeBeforeNext: 5
   _sceneToLoad: {fileID: 102900000, guid: 2a5925938a516b8438bd9699f2440a55, type: 3}

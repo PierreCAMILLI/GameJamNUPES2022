@@ -67,6 +67,7 @@ public class QuestionSequence : DebateSequence
     public override void OnStart()
     {
         ScrollingTextUI scrollingText = DebateManager.Instance.DebateTextUI;
+        DebateManager.Instance.DebatorUI.IsTalking = true;
         scrollingText.SetText(_text, ShowAnswers);
         _startTime = Mathf.Infinity;
     }
@@ -95,6 +96,7 @@ public class QuestionSequence : DebateSequence
 
     private void ShowAnswers()
     {
+        DebateManager.Instance.DebatorUI.IsTalking = false;
         foreach (Answer answer in _answers)
         {
             DebateManager.Instance.ChoicesGeneratorUI.AddButton(answer);
@@ -132,6 +134,7 @@ public class QuestionSequence : DebateSequence
     public void HandleButtonPressed(Answer answer)
     {
         int earnOpinion = Mathf.RoundToInt(answer.WinRate * answer.Question.Multiplier * (1f + DebateManager.Instance.FrenesyPublicOpinionBonus));
+        DebateManager.Instance.DebatorUI.State = answer.DebatorState;
         if (!SetPublicOpinionValue(earnOpinion))
         {
             if (answer.WinRate <= 0 || _stopFrenesy)

@@ -26,8 +26,10 @@ public class RandomNextSequence : DebateSequence
 
         _textFullyAppearedTime = float.MaxValue;
         ScrollingTextUI scrollingText = DebateManager.Instance.DebateTextUI;
+        DebateManager.Instance.DebatorUI.IsTalking = true;
         scrollingText.SetText(_text, () =>
         {
+            DebateManager.Instance.DebatorUI.IsTalking = false;
             _textFullyAppearedTime = Time.time;
         });
     }

@@ -5,9 +5,9 @@ using UnityEngine;
 public enum DebatorState
 {
     Neutral,
-    Talking,
+    Smirk,
     Cornered,
-    GotYou,
+    Gotya,
     Angry,
-    Vanquished
+    Defeated
 }
