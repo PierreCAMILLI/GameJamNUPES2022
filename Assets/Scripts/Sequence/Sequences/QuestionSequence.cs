@@ -10,6 +10,7 @@ public class QuestionSequence : DebateSequence
     public class Answer
     {
         [field: SerializeField, HideInInspector] public QuestionSequence Question { get; set; }
+        [field: SerializeField, TextArea(1, 2)] public string Title { get; private set; }
         [field: SerializeField, TextArea(1, 2)] public string Text { get; private set; }
         [field: SerializeField, Range(-100, 100)] public int WinRate { get; private set; }
         [field: SerializeField] public DebatorState DebatorState { get; private set; }

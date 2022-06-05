@@ -30,7 +30,7 @@ public class ChoicesGeneratorUI : MonoBehaviour
     public void AddButton(QuestionSequence.Answer answer)
     {
         ChoiceButtonUI button = _buttonsPool.Get();
-        button.Text.text = answer.Text;
+        button.Text.text = answer.Title;
         button.Button.onClick.RemoveAllListeners();
         button.Button.onClick.AddListener(() => {
             answer.Question.HandleButtonPressed(answer);
