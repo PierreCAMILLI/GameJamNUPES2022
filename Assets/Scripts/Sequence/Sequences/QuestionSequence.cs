@@ -70,6 +70,7 @@ public class QuestionSequence : DebateSequence
         DebateManager.Instance.DebatorUI.IsTalking = true;
         scrollingText.SetText(_text, ShowAnswers);
         _startTime = Mathf.Infinity;
+        MusicManager.Instance.PlayHigh();
     }
 
     public override void OnUpdate()
@@ -81,6 +82,7 @@ public class QuestionSequence : DebateSequence
     {
         DebateManager.Instance.ChoicesGeneratorUI.RemoveAllButtons();
         DebateManager.Instance.TimespanUI.Value = 1f;
+        MusicManager.Instance.PlayNormal();
     }
 
     private void UpdateTime()
