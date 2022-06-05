@@ -568,6 +568,10 @@ PrefabInstance:
       propertyPath: _choicesGeneratorUI
       value: 
       objectReference: {fileID: 1625141483}
+    - target: {fileID: 3176825860104313128, guid: 391bc724d9018224ca63efe7df072241, type: 3}
+      propertyPath: _startSequence
+      value: 
+      objectReference: {fileID: 11400000, guid: 0819d28d16f5a6c438fe890d223014b7, type: 2}
     - target: {fileID: 3176825860104313129, guid: 391bc724d9018224ca63efe7df072241, type: 3}
       propertyPath: m_Name
       value: DebateManager
@@ -583,11 +587,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5330579135768128717, guid: 86e1736eac022164ea61edb57bc287e6, type: 3}
       propertyPath: m_fontSize
-      value: 64
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5330579135768128717, guid: 86e1736eac022164ea61edb57bc287e6, type: 3}
       propertyPath: m_fontSizeBase
-      value: 64
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5330579136568499176, guid: 86e1736eac022164ea61edb57bc287e6, type: 3}
       propertyPath: m_Pivot.x
@@ -929,7 +933,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1040,7 +1044,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

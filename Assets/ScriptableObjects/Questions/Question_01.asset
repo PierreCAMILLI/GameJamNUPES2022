@@ -12,25 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce85926ee84721a4088db5ae7d2d5b89, type: 3}
   m_Name: Question_01
   m_EditorClassIdentifier: 
-  _title: 
-  _text: Q1
+  _title: "Nucl\xE9aire"
+  _text: "Passons \xE0 la question du nucl\xE9aire. De ce que l'on sait, les diff\xE9rents
+    repr\xE9sentants de votre union ne semblent plus vraiment d'accord en ce qui
+    concerne la sortie du nucl\xE9aire de la France. Pourtant, vous, vous semblez
+    soutenir cette solution. Mais dites-nous du coup : comment envisagez-vous la
+    sortie du nucl\xE9aire pour le pays, mmh ?"
   _multiplier: 1
-  _victorySequence: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
-  _defeatSequence: {fileID: 11400000, guid: 34805efe56a8f554fa6508c0bdc33cb8, type: 2}
+  _timeToAnswer: 20
+  _noAnswerPenalty: 10
+  _stopFrenesy: 0
+  _victorySequence: {fileID: 11400000, guid: 1c5085cfb87252946b4a23fb5d0d0dd8, type: 2}
+  _defeatSequence: {fileID: 11400000, guid: 28e91db9943840343b9704752ccdc5d9, type: 2}
+  _timeElapsedSequence: {fileID: 11400000, guid: 91384de1fb6c6a145a03200e54acdf1b, type: 2}
   _defaultNextSequence: {fileID: 11400000, guid: d3b379991b343c04c8fd8e58a9a4fb5b, type: 2}
   _answers:
   - <Question>k__BackingField: {fileID: 11400000}
-    <Text>k__BackingField: 100
-    <WinRate>k__BackingField: 5
-    <DebatorState>k__BackingField: 4
-    <NextSequence>k__BackingField: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
-  - <Question>k__BackingField: {fileID: 11400000}
-    <Text>k__BackingField: 50
-    <WinRate>k__BackingField: 3
-    <DebatorState>k__BackingField: 3
-    <NextSequence>k__BackingField: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
-  - <Question>k__BackingField: {fileID: 11400000}
-    <Text>k__BackingField: -50
-    <WinRate>k__BackingField: -3
+    <Title>k__BackingField: "Sortie progressive sur plusieurs ann\xE9es"
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: 15
     <DebatorState>k__BackingField: 2
-    <NextSequence>k__BackingField: {fileID: 11400000, guid: 34805efe56a8f554fa6508c0bdc33cb8, type: 2}
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: c17367cf91076a74ebfaf0d0ae5c07ee, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Title>k__BackingField: "Sortie imm\xE9diate du nucl\xE9aire"
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: -10
+    <DebatorState>k__BackingField: 4
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: 8697607c1f6fb5c47b35f79578838af2, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Title>k__BackingField: "Enterrement des d\xE9chets nucl\xE9aires"
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: -5
+    <DebatorState>k__BackingField: 1
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: e2ffbd11885b47c419281ce8f01018c4, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Title>k__BackingField: "Un nucl\xE9aire plus propre et moins co\xFBteux"
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: -5
+    <DebatorState>k__BackingField: 3
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: 26e1bc3af13ac9e4cae1dea0898c0cf8, type: 2}

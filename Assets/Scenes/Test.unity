@@ -633,6 +633,10 @@ PrefabInstance:
       propertyPath: _choicesGeneratorUI
       value: 
       objectReference: {fileID: 1492675566}
+    - target: {fileID: 3176825860104313128, guid: 391bc724d9018224ca63efe7df072241, type: 3}
+      propertyPath: _startSequence
+      value: 
+      objectReference: {fileID: 11400000, guid: 0819d28d16f5a6c438fe890d223014b7, type: 2}
     - target: {fileID: 3176825860104313129, guid: 391bc724d9018224ca63efe7df072241, type: 3}
       propertyPath: m_Name
       value: DebateManager

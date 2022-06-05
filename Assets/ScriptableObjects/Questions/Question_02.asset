@@ -13,24 +13,41 @@ MonoBehaviour:
   m_Name: Question_02
   m_EditorClassIdentifier: 
   _title: 
-  _text: Q2
+  _text: "\xC9voquons maintenant la question des quartiers populaires. Aujourd'hui,
+    de plus en plus de familles vivent dans la peur et la mis\xE8re dans des aires
+    urbaines totalement d\xE9favoris\xE9es et pr\xE9sentant une violence des plus
+    choquantes. Qu'avez-vous \xE0 proposer pour mettre un terme \xE0 cette triste
+    situation ?"
   _multiplier: 1
-  _victorySequence: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
-  _defeatSequence: {fileID: 11400000, guid: 34805efe56a8f554fa6508c0bdc33cb8, type: 2}
+  _timeToAnswer: 10
+  _noAnswerPenalty: 10
+  _stopFrenesy: 0
+  _victorySequence: {fileID: 11400000, guid: 1c5085cfb87252946b4a23fb5d0d0dd8, type: 2}
+  _defeatSequence: {fileID: 11400000, guid: 28e91db9943840343b9704752ccdc5d9, type: 2}
+  _timeElapsedSequence: {fileID: 11400000, guid: 91384de1fb6c6a145a03200e54acdf1b, type: 2}
   _defaultNextSequence: {fileID: 11400000, guid: d3b379991b343c04c8fd8e58a9a4fb5b, type: 2}
   _answers:
   - <Question>k__BackingField: {fileID: 11400000}
-    <Text>k__BackingField: 100
-    <WinRate>k__BackingField: 5
-    <DebatorState>k__BackingField: 4
-    <NextSequence>k__BackingField: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
-  - <Question>k__BackingField: {fileID: 11400000}
-    <Text>k__BackingField: 50
-    <WinRate>k__BackingField: 3
-    <DebatorState>k__BackingField: 3
-    <NextSequence>k__BackingField: {fileID: 11400000, guid: 285a159000ec6654883b137051bced6e, type: 2}
-  - <Question>k__BackingField: {fileID: 11400000}
-    <Text>k__BackingField: -50
-    <WinRate>k__BackingField: -3
+    <Title>k__BackingField: "Am\xE9liorer les conditions de vie"
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: 15
     <DebatorState>k__BackingField: 2
-    <NextSequence>k__BackingField: {fileID: 11400000, guid: 34805efe56a8f554fa6508c0bdc33cb8, type: 2}
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: bb3d3ff57fb19664dbaa69d02e4da496, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Title>k__BackingField: Armer la police
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: -5
+    <DebatorState>k__BackingField: 3
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: 508b6fbae36b40846bfc60f5d1bb54ea, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Title>k__BackingField: "Lib\xE9rer des logements"
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: -10
+    <DebatorState>k__BackingField: 4
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: 9562117334194cf4f8707c303917e66b, type: 2}
+  - <Question>k__BackingField: {fileID: 11400000}
+    <Title>k__BackingField: Limiter les naissances
+    <Text>k__BackingField: 
+    <WinRate>k__BackingField: -10
+    <DebatorState>k__BackingField: 4
+    <NextSequence>k__BackingField: {fileID: 11400000, guid: d7fa7440d9ad4754e80fbff63faff46e, type: 2}
