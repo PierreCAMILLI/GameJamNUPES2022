@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DefeatSpeech
   m_EditorClassIdentifier: 
   _text: "La NUPES c'est nul, vive le lib\xE9ralisme ! Mouahaha !"
-  _debatorState: 0
+  _debatorState: 3
   _waitingTimeBeforeNext: 5
   _sceneToLoad: {fileID: 102900000, guid: 2a5925938a516b8438bd9699f2440a55, type: 3}

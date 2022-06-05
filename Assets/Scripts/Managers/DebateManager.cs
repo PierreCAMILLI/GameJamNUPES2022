@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DebatePlayer))]
 public class DebateManager : Toolset.SingletonBehaviour<DebateManager>
 {
     [SerializeField] private DebatePlayer _sequencePlayer;
+    [SerializeField] private AudioSource _audioSource;
 
     [Space]
     [SerializeField] private ScrollingTextUI _debateTextUI;
@@ -56,6 +58,12 @@ public class DebateManager : Toolset.SingletonBehaviour<DebateManager>
         _publicOpinionUI.SetValueWithoutTransition(_publicOpinionInitialValue);
 
         Frenesy = 0;
+    }
+
+    private void OnValidate()
+    {
+        _sequencePlayer = GetComponent<DebatePlayer>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public bool IsSequenceAlreadyMet(DebateSequence sequence)

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(AudioSource))]
 public class PublicOpinionUI : MonoBehaviour
 {
+    [SerializeField, HideInInspector] private AudioSource _audioSource;
     [SerializeField] private UnityEngine.UI.Image _gaugeFill;
     [SerializeField] private int _maxValue = 100;
     [SerializeField] private int _value = 50;
@@ -12,6 +14,12 @@ public class PublicOpinionUI : MonoBehaviour
 
     [Space]
     [SerializeField] private Color[] _gaugeColors;
+
+    [Space]
+    [SerializeField] private AudioClip _argumentSuccess;
+    [SerializeField] private AudioClip _argumentBigSuccess;
+    [SerializeField] private AudioClip _argumentFailure;
+    [SerializeField] private AudioClip _argumentBigFailure;
 
     private float _smoothDampValue;
     private float _velocity;
@@ -25,7 +33,11 @@ public class PublicOpinionUI : MonoBehaviour
     public int Value
     {
         get => _value;
-        set => _value = value;
+        set
+        {
+            PlayEvolutionSound(value - _value);
+            _value = value;
+        }
     }
 
     private void Start()
@@ -41,6 +53,11 @@ public class PublicOpinionUI : MonoBehaviour
         _smoothDampValue = Mathf.SmoothDamp(_smoothDampValue, lerp, ref _velocity, _gaugeSpeed == 0f ? 0f : 1f / _gaugeSpeed, Mathf.Infinity, Time.deltaTime);
         _gaugeFill.fillAmount = _smoothDampValue;
         _gaugeFill.color = GetGaugeColor(_smoothDampValue);
+    }
+
+    private void OnValidate()
+    {
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void SetValueWithoutTransition(int value)
@@ -71,5 +88,31 @@ public class PublicOpinionUI : MonoBehaviour
         int upperPosition = Mathf.CeilToInt(position);
 
         return Color.Lerp(_gaugeColors[lowerPosition], _gaugeColors[upperPosition], position - lowerPosition);
+    }
+
+    public void PlayEvolutionSound(int evolution)
+    {
+        if (evolution >= 50)
+        {
+            _audioSource.clip = _argumentBigSuccess;
+        }
+        else if (evolution < 50 && evolution > 0)
+        {
+            _audioSource.clip = _argumentSuccess;
+        }
+        else if (evolution < 0 && evolution > -50)
+        {
+            _audioSource.clip = _argumentFailure;
+        }
+        else if (evolution <= 50)
+        {
+            _audioSource.clip = _argumentBigFailure;
+        }
+        else
+        {
+            _audioSource.clip = null;
+        }
+
+        _audioSource.Play();
     }
 }

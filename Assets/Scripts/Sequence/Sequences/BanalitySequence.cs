@@ -12,6 +12,7 @@ public class BanalitySequence : DebateSequence
     [SerializeField] private bool _changeDebatorState = false;
     [SerializeField] private DebatorState _nextState;
 
+    [Space]
     [SerializeField] private DebateSequence _nextSequence;
 
     private float _textFullyAppearedTime;

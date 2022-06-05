@@ -4,13 +4,19 @@ using UnityEngine;
 using TMPro;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(AudioSource))]
 public class ScrollingTextUI : MonoBehaviour
 {
     [SerializeField, HideInInspector] private TextMeshProUGUI _tmpText;
+    [SerializeField, HideInInspector] private AudioSource _audioSource;
     [SerializeField] private bool _activated = true;
     [SerializeField] private float _charsPerSecond;
     [Tooltip("Requires Rich Text enabled")]
     [SerializeField] private bool _fixWordJumping = true;
+    [SerializeField] private bool _waitSoundToFinish = true;
+    [Space]
+    [SerializeField] private AudioClip _nextTextSound;
+    [SerializeField] private AudioClip _typeWriterSound;
     [SerializeField, TextArea(3,6)] private string _text;
 
     private float _startScrollingTime;
@@ -34,6 +40,7 @@ public class ScrollingTextUI : MonoBehaviour
     private void OnValidate()
     {
         _tmpText = GetComponent<TextMeshProUGUI>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void SetText(string text, System.Action onTextFullyDisplayed = null)
@@ -41,6 +48,9 @@ public class ScrollingTextUI : MonoBehaviour
         _text = text;
         _startScrollingTime = Time.time;
         _onTextFullyDisplayed = onTextFullyDisplayed;
+
+        _audioSource.clip = _nextTextSound;
+        _audioSource.Play();
 
         if (_activated)
         {
@@ -74,6 +84,11 @@ public class ScrollingTextUI : MonoBehaviour
             charactersToShowCount = Mathf.Max(charactersToShowCount, _previousTextLength);
             if (charactersToShowCount != _previousTextLength)
             {
+                if (!_waitSoundToFinish || !_audioSource.isPlaying)
+                {
+                    _audioSource.clip = _typeWriterSound;
+                    _audioSource.Play();
+                }
                 if (_fixWordJumping && _tmpText.richText)
                 {
                     _tmpText.text = $"{_text.Substring(0, charactersToShowCount)}<alpha=#00>{_text.Substring(charactersToShowCount)}</alpha>";
